@@ -62,6 +62,7 @@ export default {
 @use '../src/styles/variables' as *;
 
 .links-container {
+    position: relative;
     background-color: $pimaryColor;
     padding: 50px 0;
 
@@ -82,10 +83,6 @@ export default {
 
             img {
                 height: 100%;
-            }
-
-            .image:last-child img {
-                width: 100%;
             }
         }
     }
