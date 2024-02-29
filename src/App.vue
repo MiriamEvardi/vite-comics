@@ -1,10 +1,12 @@
 <script >
 
 import AppNav from './components/AppNav.vue';
+import AppContent from './components/AppContent.vue';
 
 export default {
   components: {
     AppNav,
+    AppContent,
   }
 
 }
@@ -13,6 +15,7 @@ export default {
 
 <template>
   <AppNav></AppNav>
+  <AppContent></AppContent>
 </template>
 
 <style lang="scss"></style>

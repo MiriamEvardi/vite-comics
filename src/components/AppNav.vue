@@ -52,7 +52,7 @@ nav {
     background-color: aliceblue;
 
     height: 120px;
-    padding: 0 200px;
+
     padding-top: 20px;
 }
 
@@ -60,6 +60,7 @@ nav {
 
     width: 80vw;
     max-width: 1200px;
+    padding: 0 200px;
 
     margin: 0 auto;
 
