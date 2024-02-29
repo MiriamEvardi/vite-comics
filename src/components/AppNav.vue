@@ -28,7 +28,7 @@ export default {
                     <img src="/img/dc-logo.png" alt="">
                 </div>
 
-                <ul id="links">
+                <ul class="links">
                     <li v-for="(currentLink, index) in links" :class="index == activeIndex ? 'active' : ''"
                         @click="activeLink(index)">
                         {{ currentLink }}</li>
@@ -41,12 +41,8 @@ export default {
 
 
 <style lang="scss">
-$pimaryColor: #0282f9;
-
-@mixin flexItem {
-    display: flex;
-    align-items: center;
-}
+@use '../src/styles/mixins' as *;
+@use '../src/styles/variables' as *;
 
 nav {
     background-color: aliceblue;
@@ -70,7 +66,7 @@ nav {
     }
 }
 
-#links {
+.links {
     @include flexItem;
 
     list-style-type: none;
@@ -82,6 +78,8 @@ nav {
 
     .active {
         border-bottom: $pimaryColor solid 4px;
+
+        color: $pimaryColor;
     }
 }
 </style>
