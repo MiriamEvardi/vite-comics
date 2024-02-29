@@ -60,7 +60,6 @@ export default {
 <style lang="scss">
 @use '../src/styles/mixins' as *;
 @use '../src/styles/variables' as *;
-@use '../styles/mixins' as *;
 
 .link-inner {
     @include containerItem;
