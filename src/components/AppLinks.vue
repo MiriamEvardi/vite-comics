@@ -40,7 +40,7 @@ export default {
 
 <template>
     <div class="links-container">
-        <div class="container">
+        <div class="link-inner">
             <ul class="links">
 
                 <li v-for="currentLink in informations">
@@ -60,11 +60,17 @@ export default {
 <style lang="scss">
 @use '../src/styles/mixins' as *;
 @use '../src/styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.link-inner {
+    @include containerItem;
+}
 
 .links-container {
     position: relative;
     background-color: $pimaryColor;
     padding: 50px 0;
+    z-index: 10;
 
     .links {
         @include flexItem;

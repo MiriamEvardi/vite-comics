@@ -21,9 +21,9 @@ export default {
 
 <template>
     <nav>
-        <div class="container">
+        <div class="nav-container">
 
-            <div>
+            <div class="inner-container">
                 <div>
                     <img src="/img/dc-logo.png" alt="">
                 </div>
@@ -43,28 +43,30 @@ export default {
 <style lang="scss">
 @use '../src/styles/mixins' as *;
 @use '../src/styles/variables' as *;
+@use '../styles/mixins' as *;
+
 
 nav {
     background-color: aliceblue;
+    width: 100%;
 
     height: 120px;
 
     padding-top: 20px;
-}
 
-.container {
+    .nav-container {
+        @include containerItem;
 
-    width: 80vw;
-    max-width: 1200px;
-    padding: 0 200px;
-
-    margin: 0 auto;
-
-    div {
-        @include flexItem;
-        justify-content: space-between;
     }
 }
+
+
+.inner-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+
 
 .links {
     @include flexItem;
