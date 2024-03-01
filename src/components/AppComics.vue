@@ -2,12 +2,12 @@
 import ComicsItem from './ComicsItem.vue';
 
 export default {
+    name: 'AppComics',
 
-    component: {
+    components: {
         ComicsItem,
     },
 
-    name: 'AppContent',
 
     data() {
         return {
@@ -99,6 +99,16 @@ export default {
         <div class="container">
             <h2> CURRENT SERIES</h2>
         </div>
+        <div class="container">
+            <div id="comics">
+
+                <div class="comics-list">
+
+                    <ComicsItem v-for="currentSeries in series" :comicsImage="currentSeries.thumb"
+                        :comicsTitle="currentSeries.series"></ComicsItem>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -129,6 +139,15 @@ export default {
         padding: 10px 15px;
 
         background-color: $primaryColor;
+    }
+
+    #comics {
+        padding: 20px 0;
+
+        .comics-list {
+            display: flex;
+            flex-flow: row wrap;
+        }
     }
 }
 </style>
