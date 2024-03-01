@@ -107,6 +107,10 @@ export default {
                     <ComicsItem v-for="currentSeries in series" :comicsImage="currentSeries.thumb"
                         :comicsTitle="currentSeries.series"></ComicsItem>
                 </div>
+
+                <div class="load-button">
+                    <button class="load">LOAD MORE</button>
+                </div>
             </div>
         </div>
     </div>
@@ -147,6 +151,21 @@ export default {
         .comics-list {
             display: flex;
             flex-flow: row wrap;
+        }
+
+        .load-button {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+
+            .load {
+                padding: 10px 50px;
+                background-color: $primaryColor;
+
+                font-weight: 600;
+
+            }
+
         }
     }
 }

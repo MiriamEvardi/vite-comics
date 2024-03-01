@@ -66,6 +66,10 @@ export default {
 
     padding: 50px 0;
 
+    .container {
+        padding: 0px 30px;
+    }
+
     .links {
         @include flexItem;
         justify-content: space-between;
