@@ -16,9 +16,7 @@ export default {
     <div class="footer-background">
         <div class="container list">
 
-            <div>
-                <button>SIGN-UP NOW!</button>
-            </div>
+            <button>SIGN-UP NOW!</button>
 
             <ul class="social-list">
                 <li class="follow">
@@ -35,27 +33,26 @@ export default {
 
 <style lang="scss">
 @use '../styles/variables' as *;
+@use '../styles/general.scss' as *;
 
 .footer-background {
-    position: relative;
     background-color: #303030;
-    height: 110px;
-    z-index: 10;
+    padding: 20px 0;
+
+    .list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
 
-.list {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 20px;
-}
 
 button {
     color: white;
     background-color: transparent;
 
     padding: 15px 15px;
-    border: solid $pimaryColor 1px
+    border: solid $primaryColor 1px
 }
 
 .social-list {
@@ -68,7 +65,7 @@ button {
 }
 
 .follow {
-    color: $pimaryColor;
+    color: $primaryColor;
     font-weight: bold;
 }
 </style>

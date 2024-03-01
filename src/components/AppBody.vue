@@ -11,7 +11,7 @@ export default {
 
     data() {
         return {
-            links: [
+            linkList: [
                 {
                     title: 'DC COMICS',
                     items: ['Characters', 'Comics', 'Movies', 'TV', 'Games', 'Videos', 'News']
@@ -37,37 +37,29 @@ export default {
 </script>
 
 <template>
-    <div class="background">
+    <div>
         <AppLinks></AppLinks>
 
-        <div class="container">
-            <div class="big-logo"><img src="/img/dc-logo-bg.png" alt=""></div>
-            <div class="column">
-                <h2>{{ links[0].title }}</h2>
-                <ul class="bottom-links">
-                    <li class="column-list" v-for="(item, index) in links[0].items" :key="index">{{ item }}</li>
-                </ul>
-                <h2>{{ links[1].title }}</h2>
-                <ul class="bottom-links">
-                    <li class="column-list" v-for="(item, index) in links[1].items" :key="index">{{ item }}</li>
-                </ul>
+        <div class="background">
+            <div class="container">
+
+                <div class="link-list">
+
+                    <div v-for="currentLinkList in linkList">
+                        <h4>{{ currentLinkList.title }}</h4>
+                        <ul>
+                            <li v-for="currentLink in currentLinkList.items">{{ currentLink }}</li>
+
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div class="big-logo">
+                    <img src="/img/dc-logo-bg.png" alt="">
+                </div>
+
             </div>
-            <div class="column">
-                <h2>{{ links[2].title }}</h2>
-                <ul class="bottom-links">
-                    <li class="column-list" v-for="(item, index) in links[2].items" :key="index">{{ item }}</li>
-                </ul>
-            </div>
-            <div class="column">
-                <h2>{{ links[3].title }}</h2>
-                <ul class="bottom-links">
-                    <li class="column-list" v-for="(item, index) in links[3].items" :key="index">{{ item }}</li>
-                </ul>
-            </div>
-
-
-
-
         </div>
     </div>
 </template>
@@ -75,47 +67,56 @@ export default {
 <style lang="scss">
 @use '../src/styles/mixins' as *;
 @use '../src/styles/variables' as *;
+@use '../styles/general' as *;
 
 
 .background {
-    position: relative;
-    background-image: url(/img/footer-bg.jpg);
-    background-size: cover;
+    height: 370px;
+
+    background-image: url('/img/footer-bg.jpg');
+    background-position: cover;
+
+    overflow: hidden;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        height: 100%;
 
 
-}
-
-.container {
-    @include containerItem;
-
-    display: flex;
-    align-items: flex-start;
-    gap: 50px;
-
-    .column {
-        flex-direction: column;
-        align-items: start;
-
-        h2 {
-            margin-bottom: 0;
-        }
     }
 
-    .bottom-links {
+
+
+
+    ul {
         list-style-type: none;
         padding: 0;
 
-        .column-list {
-            display: flex;
-            justify-content: flex-start;
+        color: #ccc;
+        font-size: .9 em;
+    }
+
+    .link-list {
+        display: flex;
+        flex-flow: column wrap;
+        align-content: flex-start;
+        gap: 10px 30px;
+
+        height: 100%;
+
+        padding: 20px 0;
+
+
+        h4 {
+            font-size: 1.5em;
+
+            margin-bottom: 10px;
         }
     }
-}
 
 
-.big-logo {
-    position: absolute;
-    right: 15%;
-    bottom: -10%;
 }
 </style>

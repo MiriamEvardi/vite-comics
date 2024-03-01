@@ -1,14 +1,14 @@
 <script >
 
 import AppNav from './components/AppNav.vue';
-import AppContent from './components/AppContent.vue';
+import AppComics from './components/AppComics.vue';
 import AppBody from './components/AppBody.vue';
 import AppFooter from './components/AppFooter.vue';
 
 export default {
   components: {
     AppNav,
-    AppContent,
+    AppComics,
     AppBody,
     AppFooter,
   }
@@ -19,12 +19,11 @@ export default {
 
 <template>
   <AppNav></AppNav>
-  <AppContent></AppContent>
+  <AppComics></AppComics>
   <AppBody></AppBody>
   <AppFooter></AppFooter>
 </template>
 
 <style lang="scss">
-@use '../src/styles/mixins' as *;
-@use '../src/styles/variables' as *;
+@use '../src/styles/general.scss' as *;
 </style>

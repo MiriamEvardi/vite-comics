@@ -21,21 +21,20 @@ export default {
 
 <template>
     <nav>
-        <div class="nav-container">
 
-            <div class="inner-container">
-                <div>
-                    <img src="/img/dc-logo.png" alt="">
-                </div>
 
-                <ul class="links">
-                    <li v-for="(currentLink, index) in links" :class="index == activeIndex ? 'active' : ''"
-                        @click="activeLink(index)">
-                        {{ currentLink }}</li>
-                </ul>
-            </div>
+        <div class="container">
 
+            <img id="logo" src="/img/dc-logo.png" alt="">
+
+
+            <ul class="links">
+                <li v-for="(currentLink, index) in links" :class="index == activeIndex ? 'active' : ''"
+                    @click="activeLink(index)">
+                    {{ currentLink }}</li>
+            </ul>
         </div>
+
     </nav>
 </template>
 
@@ -43,45 +42,63 @@ export default {
 <style lang="scss">
 @use '../src/styles/mixins' as *;
 @use '../src/styles/variables' as *;
-@use '../styles/mixins' as *;
-
 
 nav {
     background-color: aliceblue;
-    width: 100%;
 
     height: 120px;
 
-    padding-top: 20px;
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
 
-    .nav-container {
-        @include containerItem;
-
+        height: 100%;
     }
+
+    #logo {
+        height: 80px;
+    }
+
+
 }
 
-
-.inner-container {
-    display: flex;
-    justify-content: space-between;
-}
-
-
-
-.links {
+ul.links {
     @include flexItem;
+    align-items: stretch;
+    gap: 30px;
+
+    height: 100%;
+
+    margin: 0;
 
     list-style-type: none;
 
     color: #464646;
     font-weight: bold;
 
-    gap: 30px;
+    li {
+        position: relative;
 
-    .active {
-        border-bottom: $pimaryColor solid 4px;
+        display: flex;
+        align-items: center;
 
-        color: $pimaryColor;
+        &.active::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+
+            width: 100%;
+            height: 6px;
+
+            background-color: $primaryColor;
+
+        }
+
+        &.active {
+            color: $primaryColor;
+        }
     }
 }
 </style>
