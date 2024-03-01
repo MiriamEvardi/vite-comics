@@ -93,23 +93,42 @@ export default {
 </script>
 
 <template>
+    <div class="top-container"></div>
+
     <div class="content-container">
         <div class="container">
-            <h2> Content Goes Here</h2>
+            <h2> CURRENT SERIES</h2>
         </div>
     </div>
 </template>
 
 <style lang="scss">
+@use '../styles/general' as *;
+@use '../styles/variables' as *;
+
+.top-container {
+    background-image: url(/img/jumbotron.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+}
+
 .content-container {
-    height: 120px;
+    background-color: #1c1c1c;
+    padding: 40px 0;
 
-    padding-top: 20px;
-
-    background-color: black;
+    .container {
+        position: relative;
+    }
 
     h2 {
-        padding-top: 10px;
+        position: absolute;
+        bottom: 15px;
+        left: 0;
+
+        padding: 10px 15px;
+
+        background-color: $primaryColor;
     }
 }
 </style>
